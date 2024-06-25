@@ -1,62 +1,76 @@
+"use client";
+import PromiseCard from "@/components/promise-card/promise-card";
 import { Metadata } from "next";
+import { ReactNode, useEffect } from "react";
 import { FaCoffee } from "react-icons/fa";
+import style from "./page.module.css";
 
-export const metadata: Metadata = {
-  title: "Du Café et du Code. Studio de création de sites internet sur mesure.",
-  description:
-    "Le studio Du Café et du Code réalise des sites internet sur mesure pour les indépendants de tous les horizons grâce à des outils techniques récents et une tarification adaptée.",
-  keywords: [
-    "Développeur",
-    "Créateur de sites",
-    "Du café et du code",
-    "Combien coûte un site web",
-    "Création site web",
-    "Comment créer un site web",
-    "Développeur Normandie",
-    "Développeur Web",
-    "Développeur Rouen",
-    "Développeur",
-    "Site internet",
-    "Site vitrine",
-    "Site",
-    "Site e-commerce",
-    "E-commerce",
-    "TPE",
-    "Entrepreneurs",
-    "Sites jamstack",
-    "Sites sans serveur",
-    "Site sans wordpress",
-    "Conception de site web",
-  ],
-  metadataBase: new URL("https://ducafeetducode.com"),
-  openGraph: {
-    type: "website",
-    url: "https://ducafeetducode.com",
-    title:
-      "Du Café et du Code. Studio de création de sites internet sur mesure.",
-    description:
-      "Le studio Du Café et du Code réalise des sites internet sur mesure pour les indépendants de tous les horizons grâce à des outils techniques récents et une tarification adaptée.",
-    siteName: "Du Café et du Code",
-    images: [
-      {
-        url: "",
-      },
-    ],
-  },
-};
-
-export default function Home() {
+export default function Home(): ReactNode {
   return (
-    <main>
+    <main className={style.content}>
       <h1>
-        Plus qu’un <span className="text-yellow">site web</span>, <br />
-        Votre <span classNam e="text-yellow">signature</span>.
+        Plus qu’un{" "}
+        <span className={style.siteWeb + " text-yellow "}>
+          <div className={style.letter} data-index={1}>
+            s
+          </div>
+          <div className={style.letter} data-index={2}>
+            i
+          </div>
+          <div className={style.letter} data-index={3}>
+            t
+          </div>
+          <div className={style.letter} data-index={4}>
+            e
+          </div>
+          <div className={style.letter} data-index={5}>
+          &nbsp;
+          </div>
+          <div className={style.letter} data-index={6}>
+            w
+          </div>
+          <div className={style.letter} data-index={7}>
+            e
+          </div>
+          <div className={style.letter} data-index={8}>
+            b
+          </div>
+        </span>
+        ,
+        <br />
+        Votre{" "}
+        <span id="signature" className="text-yellow">
+          signature
+        </span>
+        .
       </h1>
       <h2>Tous les sites web se ressemblent</h2>
       <button className="btn-primary">Prendre RDV</button>
-      <span className="btn-rounded-secondary">
+      <p className="btn-rounded-secondary">
         10+ sites réalisés <FaCoffee />
-      </span>
+      </p>
+
+      <h2>Optez pour un site web à votre mesure</h2>
+      <div className={style.promiseContainer}>
+        <PromiseCard
+          image={"/images/contact.webp"}
+          alt={"Test"}
+          title={"Un titre exemplaire"}
+          description={"Une description qui l'est tout autant"}
+        ></PromiseCard>
+        <PromiseCard
+          image={"/images/contact.webp"}
+          alt={"Test"}
+          title={"Un titre exemplaire"}
+          description={"Une description qui l'est tout autant"}
+        ></PromiseCard>
+        <PromiseCard
+          image={"/images/contact.webp"}
+          alt={"Test"}
+          title={"Un titre exemplaire"}
+          description={"Une description qui l'est tout autant"}
+        ></PromiseCard>
+      </div>
     </main>
   );
 }

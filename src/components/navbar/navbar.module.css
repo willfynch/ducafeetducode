@@ -1,0 +1,46 @@
+.nav__container {
+  --_animationStartsAfter: 500px;
+  --_animationDistance: 50px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 20px 0;
+  animation: switchColor linear forwards;
+  @supports (animation-timeline: view()){
+    animation-timeline: view();
+    animation-range-start: calc(100vh + var(--_animationStartsAfter));
+    animation-range-end: calc(100vh + var(--_animationDistance));
+  }
+
+}
+
+.nav__container nav {
+}
+
+.nav__container nav a {
+  text-decoration: none;
+  color: var(--black-primary);
+}
+.brand {
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  font-weight: 800;
+}
+
+.brand img {
+  width: 35px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+}
+
+@keyframes switchColor {
+  to {
+    background-color: var(--white-primary);
+  }
+}
