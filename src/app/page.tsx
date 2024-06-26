@@ -1,23 +1,31 @@
 "use client";
 import PromiseCard from "@/components/promise-card/promise-card";
-import next, { Metadata } from "next";
-import { MouseEventHandler, ReactNode, useEffect } from "react";
+import { ReactNode, useEffect, useRef } from "react";
 import { FaCoffee } from "react-icons/fa";
 import style from "./page.module.css";
 import ProjectCard from "@/components/project-card/project-card";
 
 export default function Home(): ReactNode {
 
-  let track: HTMLElement;
+  const trackRef = useRef<HTMLElement | null>(null);
+
   useEffect(()=>{
-    track = document.getElementById('track')!;
+    if(typeof window === 'undefined') return;
+    const track = document.getElementById('track');
+    trackRef.current = track;
   },[])
 
-  function handleMouseMove(e:any){
-   
-    if(track.dataset.mouseDownAt === '0' || track.dataset.mouseDownAt===undefined) return;
+  function handleMouseMove(e:React.MouseEvent<HTMLElement> | React.TouchEvent<HTMLElement>): void {
+    const track = trackRef.current;
+    let clientX:number;
+    if( isMouseEvent(e)){
+      clientX = e.clientX; 
+    }else{
+      clientX = e.touches[0].clientX; 
+    }
+    if(track?.dataset.mouseDownAt === '0' || track?.dataset.mouseDownAt===undefined) return;
 
-    const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX;
+    const mouseDelta = parseFloat(track.dataset.mouseDownAt) - clientX;
     const maxDelta = window.innerWidth / 2;
 
     const percentage = (mouseDelta/maxDelta) * -100;
@@ -32,15 +40,28 @@ export default function Home(): ReactNode {
 
   }
 
-  function handleMouseDown(e:any){
-    
-    track.dataset.mouseDownAt = e.clientX;
+  function isMouseEvent(e: React.MouseEvent<HTMLElement> | React.TouchEvent<HTMLElement>): e is React.MouseEvent<HTMLElement> {
+    return 'clientX' in e;
   }
+  
+  function handleMouseDown(e: React.MouseEvent<HTMLElement> |  React.TouchEvent<HTMLElement>) : void {
+    const target = e.currentTarget as HTMLElement;
+    let clientX:number;
+    if( isMouseEvent(e)){
+      clientX = e.clientX; 
+    }else{
+      clientX = e.touches[0].clientX; 
+    }
+    target.dataset.mouseDownAt = String(clientX);
+  }
+  
 
-  function handleMouseUp(e:any){
-    track.dataset.mouseDownAt = '0';
-    track.dataset.prevPercentage = track.dataset.percentage;
+  function handleMouseUp(e: React.MouseEvent<HTMLElement> | React.TouchEvent<HTMLElement>) : void {
+    const target = e.currentTarget as HTMLElement;
+    target.dataset.mouseDownAt = '0';
+    target.dataset.prevPercentage = target.dataset.percentage;
   }
+  
 
   return (
     <main className={style.content}>
