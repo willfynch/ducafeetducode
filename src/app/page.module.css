@@ -6,18 +6,11 @@
 }
 
 .content {
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-/* .letter {
-  display: inline-block;
-}
-.siteWeb:hover > .letter:nth-child(1){
-  transition-duration: .5s;
-  transform: translate(50% 30%) rotate(10deg);
-  color:red;
-} */
 
 .letter {
   /* position: relative; */
@@ -49,4 +42,16 @@
 .siteWeb:hover .letter[data-index="8"] {
   transform: translate(150%, 60%) rotate(4deg);
 }
+
+/* PROJECTS */
+
+.projectCardsTrack {
+  display: inline-flex;
+  justify-content: center;
+  gap: 3vmin;  
+  padding: 10px 0px;
+}
+
+
+
 

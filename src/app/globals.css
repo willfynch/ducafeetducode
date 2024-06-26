@@ -55,6 +55,9 @@ p,a,button {
   border-radius: 10px;
   transition: all ease-out .3s;
   width: fit-content;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
 }
 .btn-primary:hover {
   transform: scale(110%);

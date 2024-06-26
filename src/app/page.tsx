@@ -1,11 +1,47 @@
 "use client";
 import PromiseCard from "@/components/promise-card/promise-card";
-import { Metadata } from "next";
-import { ReactNode, useEffect } from "react";
+import next, { Metadata } from "next";
+import { MouseEventHandler, ReactNode, useEffect } from "react";
 import { FaCoffee } from "react-icons/fa";
 import style from "./page.module.css";
+import ProjectCard from "@/components/project-card/project-card";
 
 export default function Home(): ReactNode {
+
+  let track: HTMLElement;
+  useEffect(()=>{
+    track = document.getElementById('track')!;
+  },[])
+
+  function handleMouseMove(e:any){
+   
+    if(track.dataset.mouseDownAt === '0' || track.dataset.mouseDownAt===undefined) return;
+
+    const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX;
+    const maxDelta = window.innerWidth / 2;
+
+    const percentage = (mouseDelta/maxDelta) * -100;
+    let nextPercentage = parseFloat(track.dataset.prevPercentage!) + percentage; 
+    nextPercentage = Math.min(nextPercentage, 50); 
+    nextPercentage = Math.max(nextPercentage,-50)
+    track.dataset.percentage = nextPercentage.toString();
+    
+    track.animate({
+      transform: `translate(${nextPercentage}%)`
+    }, { duration: 1200, fill: "forwards" });
+
+  }
+
+  function handleMouseDown(e:any){
+    
+    track.dataset.mouseDownAt = e.clientX;
+  }
+
+  function handleMouseUp(e:any){
+    track.dataset.mouseDownAt = '0';
+    track.dataset.prevPercentage = track.dataset.percentage;
+  }
+
   return (
     <main className={style.content}>
       <h1>
@@ -24,7 +60,7 @@ export default function Home(): ReactNode {
             e
           </div>
           <div className={style.letter} data-index={5}>
-          &nbsp;
+            &nbsp;
           </div>
           <div className={style.letter} data-index={6}>
             w
@@ -71,6 +107,30 @@ export default function Home(): ReactNode {
           description={"Une description qui l'est tout autant"}
         ></PromiseCard>
       </div>
+      <div style={{ paddingTop: "200px" }}></div>
+      <section id="track" data-percentage='0' onTouchStart={handleMouseDown} onTouchEnd={handleMouseUp} onTouchMove={handleMouseMove} onMouseUp={handleMouseUp} onMouseMove={handleMouseMove}  onMouseDown={handleMouseDown} data-mouse-down-at='0' data-prev-percentage="0" className={style.projectCardsTrack}>
+        <ProjectCard
+          image={"/images/contact.webp"}
+          alt={"contact"}
+          title={"Miora Sophrologie"} url={new URL("https://a.fr")} description={""}        ></ProjectCard>
+        <ProjectCard
+          image={"/images/contact.webp"}
+          alt={"contact"}
+          title={"Miora Sophrologie"} url={new URL("https://a.fr")} description={"The code imports essential modules and creates an active instance of the FastAPI class named app"}        ></ProjectCard>
+        <ProjectCard
+          image={"/images/contact.webp"}
+          alt={"contact"}
+          title={"Miora Sophrologie"} url={new URL("https://a.fr")} description={""}        ></ProjectCard>
+        <ProjectCard
+          image={"/images/contact.webp"}
+          alt={"contact"}
+          title={"Miora Sophrologie"} url={new URL("https://a.fr")} description={""}        ></ProjectCard>
+        <ProjectCard
+          image={"/images/contact.webp"}
+          alt={"contact"}
+          title={"Miora Sophrologie"} url={new URL("https://a.fr")} description={""}        ></ProjectCard>
+      </section>
+      <div style={{ paddingTop: "200px" }}></div>
     </main>
   );
 }
