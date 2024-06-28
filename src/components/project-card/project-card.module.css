@@ -11,6 +11,14 @@
     user-select: none;
 }
 
+@media (pointer:none), (pointer:coarse) {
+  .project_card__container {
+    width: 90vw;
+    height: 100vh;
+  }
+}
+
+
 
 
 .project_card__image {
