@@ -1,30 +1,16 @@
 .project_card__container {
-    
     background-color: var(--white);
     box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.3);
     -webkit-box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
-    aspect-ratio: 1/1.15;
-    width: 60vmin;
-    height: 90vmin;
     user-select: none;
-}
-
-@media (pointer:none), (pointer:coarse) {
-  .project_card__container {
-    width: 90vw;
-    height: 100vh;
   }
-}
-
-
-
 
 .project_card__image {
     width: 100%;
-    aspect-ratio: 1/1;
-    border-radius: 10px 10px 0px 0;
+    aspect-ratio: 1/.7;
+    border-radius: 10px 10px 0 0;
   }
 
   .project_card__body {

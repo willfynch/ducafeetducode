@@ -4,65 +4,9 @@ import { ReactNode, useEffect, useRef } from "react";
 import { FaCoffee } from "react-icons/fa";
 import style from "./page.module.css";
 import ProjectCard from "@/components/project-card/project-card";
+import Slider from "@/components/slider/slider";
 
 export default function Home(): ReactNode {
-
-  const trackRef = useRef<HTMLElement | null>(null);
-
-  useEffect(()=>{
-    if(typeof window === 'undefined') return;
-    const track = document.getElementById('track');
-    trackRef.current = track;
-  },[])
-
-  function handleMouseMove(e:React.MouseEvent<HTMLElement> | React.TouchEvent<HTMLElement>): void {
-    const track = trackRef.current;
-    let clientX:number;
-    if( isMouseEvent(e)){
-      clientX = e.clientX; 
-    }else{
-      clientX = e.touches[0].clientX; 
-    }
-    if(track?.dataset.mouseDownAt === '0' || track?.dataset.mouseDownAt===undefined) return;
-
-    const mouseDelta = parseFloat(track.dataset.mouseDownAt) - clientX;
-    const maxDelta = window.innerWidth / 2;
-
-    const percentage = (mouseDelta/maxDelta) * -100;
-    let nextPercentage = parseFloat(track.dataset.prevPercentage!) + percentage; 
-    nextPercentage = Math.min(nextPercentage, 50); 
-    nextPercentage = Math.max(nextPercentage,-50)
-    track.dataset.percentage = nextPercentage.toString();
-    
-    track.animate({
-      transform: `translate(${nextPercentage}%)`
-    }, { duration: 1200, fill: "forwards" });
-
-  }
-
-  function isMouseEvent(e: React.MouseEvent<HTMLElement> | React.TouchEvent<HTMLElement>): e is React.MouseEvent<HTMLElement> {
-    return 'clientX' in e;
-  }
-  
-  function handleMouseDown(e: React.MouseEvent<HTMLElement> |  React.TouchEvent<HTMLElement>) : void {
-    const target = e.currentTarget as HTMLElement;
-    let clientX:number;
-    if( isMouseEvent(e)){
-      clientX = e.clientX; 
-    }else{
-      clientX = e.touches[0].clientX; 
-    }
-    target.dataset.mouseDownAt = String(clientX);
-  }
-  
-
-  function handleMouseUp(e: React.MouseEvent<HTMLElement> | React.TouchEvent<HTMLElement>) : void {
-    const target = e.currentTarget as HTMLElement;
-    target.dataset.mouseDownAt = '0';
-    target.dataset.prevPercentage = target.dataset.percentage;
-  }
-  
-
   return (
     <main className={style.content}>
       <h1>
@@ -101,13 +45,29 @@ export default function Home(): ReactNode {
         </span>
         .
       </h1>
-      <h2>Tous les sites web se ressemblent</h2>
       <button className="btn-primary">Prendre RDV</button>
       <p className="btn-rounded-secondary">
         10+ sites réalisés <FaCoffee />
       </p>
 
-      <h2>Optez pour un site web à votre mesure</h2>
+
+
+      <h2 style={{ textAlign: "center" }}>Tous les sites web se ressemblent</h2>
+      <p>
+        La plupart des sites web sont conçus de manière impersonnelle. Ils
+        pourraient être le vôtre, ou celui de votre concurrent.<br/><br/> Ce n’est pas ce
+        que vous voulez. Vous, vous avez besoin <strong>qu’on se souvienne de vous</strong>.
+      </p>
+
+      <h2 style={{ textAlign: "center" }}>Et la plupart sont des usines à gaz</h2>
+
+
+
+
+
+      <h2 style={{ textAlign: "center" }}>
+        Optez pour un site web à votre mesure
+      </h2>
       <div className={style.promiseContainer}>
         <PromiseCard
           image={"/images/contact.webp"}
@@ -129,28 +89,47 @@ export default function Home(): ReactNode {
         ></PromiseCard>
       </div>
       <div style={{ paddingTop: "200px" }}></div>
-      <section id="track" data-percentage='0' onTouchStart={handleMouseDown} onTouchEnd={handleMouseUp} onTouchMove={handleMouseMove} onMouseUp={handleMouseUp} onMouseMove={handleMouseMove}  onMouseDown={handleMouseDown} data-mouse-down-at='0' data-prev-percentage="0" className={style.projectCardsTrack}>
+
+      <h2 style={{ textAlign: "center" }}>Dernières réalisations</h2>
+      <Slider>
         <ProjectCard
           image={"/images/contact.webp"}
           alt={"contact"}
-          title={"Miora Sophrologie"} url={new URL("https://a.fr")} description={""}        ></ProjectCard>
+          title={"Miora Sophrologie"}
+          url={new URL("https://a.fr")}
+          description={""}
+        ></ProjectCard>
         <ProjectCard
           image={"/images/contact.webp"}
           alt={"contact"}
-          title={"Miora Sophrologie"} url={new URL("https://a.fr")} description={"The code imports essential modules and creates an active instance of the FastAPI class named app"}        ></ProjectCard>
+          title={"Miora Sophrologie"}
+          url={new URL("https://a.fr")}
+          description={
+            "The code imports essential modules and creates an active instance of the FastAPI class named app"
+          }
+        ></ProjectCard>
         <ProjectCard
           image={"/images/contact.webp"}
           alt={"contact"}
-          title={"Miora Sophrologie"} url={new URL("https://a.fr")} description={""}        ></ProjectCard>
+          title={"Miora Sophrologie"}
+          url={new URL("https://a.fr")}
+          description={""}
+        ></ProjectCard>
         <ProjectCard
           image={"/images/contact.webp"}
           alt={"contact"}
-          title={"Miora Sophrologie"} url={new URL("https://a.fr")} description={""}        ></ProjectCard>
+          title={"Miora Sophrologie"}
+          url={new URL("https://a.fr")}
+          description={""}
+        ></ProjectCard>
         <ProjectCard
           image={"/images/contact.webp"}
           alt={"contact"}
-          title={"Miora Sophrologie"} url={new URL("https://a.fr")} description={""}        ></ProjectCard>
-      </section>
+          title={"Miora Sophrologie"}
+          url={new URL("https://a.fr")}
+          description={""}
+        ></ProjectCard>
+      </Slider>
       <div style={{ paddingTop: "200px" }}></div>
     </main>
   );
