@@ -1,35 +1,49 @@
 .nav__container {
-  --_animationStartsAfter: 500px;
-  --_animationDistance: 50px;
-
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 40px;
+  height: 60px;
+  margin-bottom: -100px;
   position: sticky;
   top: 0;
   z-index: 1000;
-  padding: 20px 0;
-  animation: switchColor linear forwards;
-  @supports (animation-timeline: view()){
-    animation-timeline: view();
-    animation-range-start: calc(100vh + var(--_animationStartsAfter));
-    animation-range-end: calc(100vh + var(--_animationDistance));
-  }
+  padding: 20px 100px;
 
 }
 
-.nav__container nav {
+
+.nav__container nav, .nav__container button{
+  display: none;
+}
+@media (min-width:800px) {
+  .nav__container nav {
+    display: flex;
+    gap:12px;
+  }
+  .nav__container button{
+    display: block;
+  }
 }
 
 .nav__container nav a {
   text-decoration: none;
-  color: var(--black-primary);
+  color: var(--white-primary);
+  border-color: rgba(0,0,0,0);
+  padding: 12px 16px;
+  border-radius: 50px;
+  border-width: 1px;
+  border-style: solid;
+  transition: var(--transition-normal);
+}
+.nav__container nav a:hover {
+  border-color: var(--yellow-primary);
+  color: var(--yellow-primary);
 }
 .brand {
   text-transform: uppercase;
   display: flex;
   align-items: center;
+  font-size: 20px;
   font-weight: 800;
 }
 
@@ -39,8 +53,3 @@
   padding-right: 10px;
 }
 
-@keyframes switchColor {
-  to {
-    background-color: var(--white-primary);
-  }
-}

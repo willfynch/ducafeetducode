@@ -7,6 +7,8 @@
  --white-primary:  #FFFEF6;
  --white: #FFFFFF;
 
+ --transition-normal: all ease-out .3s;
+
  color: var(--black-primary);
  background-color: var(--white-primary);
  
@@ -21,27 +23,38 @@ body {
 }
 
 h1 {
-  font-size: calc(56px + 0.390625vw);
+  font-size: calc(36px + 0.690625vw);
   font-family: "Playfair Display", serif;
 }
 h2{
-  font-size: calc(40px + 0.390625vw);
+  font-size: calc(32px + 0.690625vw);
   font-family: "Playfair Display", serif;
 }
+@media (min-width:800px) {
+  h1 {
+    font-size: calc(72px + 0.690625vw);
+    font-family: "Playfair Display", serif;
+  }
+  h2{
+    font-size: calc(48px + 0.690625vw);
+    font-family: "Playfair Display", serif;
+  }
+}
+
 h3 {
-  font-size: calc(20px + 0.390625vw);
+  font-size: calc(20px + 0.690625vw);
   font-family: "Josefin Sans", sans-serif;
 }
 h4 {
-  font-size: calc(16px + 0.390625vw);
+  font-size: calc(16px + 0.690625vw);
   font-family: "Josefin Sans", sans-serif;
 }
 h5 {
-  font-size: calc(14px + 0.390625vw);
+  font-size: calc(14px + 0.690625vw);
   font-family: "Josefin Sans", sans-serif;
 }
 p,a,button {
-  font-size: calc(12px + 0.390625vw);
+  font-size: calc(12px + 0.290625vw);
   font-family: "Josefin Sans", sans-serif;
 }
 
@@ -50,11 +63,12 @@ p,a,button {
   background-color: var(--yellow-primary);
   color: var(--blue-primary);
   cursor: pointer;
-  padding: 10px 15px;
+  padding: 16px 20px;
   border: none;
   border-radius: 10px;
   transition: all ease-out .3s;
   width: fit-content;
+  height: fit-content;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -67,11 +81,29 @@ p,a,button {
   border-width: 1px;
   border-radius: 50px;
   border-style: solid;
-  padding: 5px 10px;
+  padding: 12px 16px;
   color: var(--yellow-primary);
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 5px;
   width: fit-content;
+  margin: 0;
+}
+
+
+/* For all overlays */
+.overlay {
+	border-image: linear-gradient(hsl(0 0% 0% / .5), hsl(0 0% 0% / .5)) fill 1
+}
+
+/*Utility class for unselectable items*/
+
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }

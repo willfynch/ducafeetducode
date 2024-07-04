@@ -1,8 +1,25 @@
+.hero {
+	background-image: url('../../public/images/hero_2.webp');
+	background-size: cover;
+	background-repeat: no-repeat;
+  background-position: center center;
+	block-size: 120vh;
+	place-content:center;
+	text-align: center;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--white-primary);
+}
+
 .promiseContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 1rem;
-  margin: auto;
+  display:  grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  grid-gap: 2rem;
+  
 }
 
 .content {
@@ -15,7 +32,7 @@
 .letter {
   /* position: relative; */
   display: inline-block;
-  transition-duration: .5s;
+  transition-duration: 0.5s;
 }
 
 .siteWeb:hover .letter[data-index="1"] {
@@ -42,10 +59,40 @@
 .siteWeb:hover .letter[data-index="8"] {
   transform: translate(150%, 60%) rotate(4deg);
 }
+.title {
+  display: inline-block;
+}
+.signature_div {
+  display: flex;
+  justify-content: center;
+}
+.signature {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.signature_svg {
+  width: 100%;
+
+  stroke-dasharray: 266;
+  stroke-dashoffset: 266;
+  transform: translateY(-100px);
+  z-index: 1;
+}
+
+.signature span:hover + .signature_svg, .signature_svg:hover {
+  animation: .5s sign linear forwards;
+}
+
+
+@keyframes sign {
+  0% {
+    stroke-dashoffset: 266;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
 
 /* PROJECTS */
-
-
-
-
-

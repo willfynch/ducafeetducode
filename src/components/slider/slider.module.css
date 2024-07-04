@@ -1,58 +1,63 @@
 .slider_container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    scroll-snap-type: x mandatory;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  scroll-snap-type: x mandatory;
 }
 .slider_track {
-    display: grid;
-    grid-auto-flow: column; 
-    place-items: center;   
-    gap: 16px;  
-    padding: 10px 10px;
-    width:60%;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-behavior: smooth;
-  }
+  display: grid;
+  grid-auto-flow: column;
+  place-items: center;
+  gap: 16px;
+  padding: 10px 10px;
+  width: 300px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+}
 
-  .slider_track::-webkit-scrollbar {
-    display: none;
-  }
+.slider_track::-webkit-scrollbar {
+  display: none;
+}
 
+.slider_track {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.slider_track > * {
+  scroll-snap-align: start;
+  width: 300px;
+  height: 80vh;
+}
+
+@media (min-width: 600px) {
   .slider_track {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    width: 100vw;
   }
-
-  .slider_track > *  {
-    scroll-snap-align: start;
-    width: 90vh;
-    height: 80vh;
+  .slider_track > * {
+    height: 80%;
+    width: 800px;
   }
-
-  @media (min-width:600px){
-    .slider_track > *  {
-        height: 80%;
-        width: 400px;
-
-      }
-  }
-
-  .slider_btn_left, .slider_btn_right {
-    position: absolute;
-    height: 50px;
-    width: 50px;
-    font-size: larger;
 }
-
-.slider_btn_left {
-    top: 50%;
-    transform: translateY(-50%);
-    left:15%;
+.slider_btns {
+  display: flex;
+  gap: 20px;
+  position: absolute;
+  bottom: 0px;
 }
+.slider_btn_left,
 .slider_btn_right {
-    top: 50%;
-    transform: translateY(-50%);
-    right:15%;
+  height: 50px;
+  width: 50px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
 }
+
+.slider_btn_left > *,
+.slider_btn_right > * {
+  cursor: pointer;
+  font-size: 47px;
+  color: var(--yellow-primary);
+}
+

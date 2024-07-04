@@ -1,9 +1,17 @@
-import { ReactNode } from "react";
+'use client'
+import { ReactNode, useEffect, useRef, useState } from "react";
 import style from "./navbar.module.css"
 import { NavItemModel } from "@/models/navitem.model";
+import { motion, useScroll } from "framer-motion";
 
 
 function Navbar(): ReactNode {
+    const [scrollColor, setScrollColor] = useState('var(--white-primary)');
+    
+    const ref = useRef<Window>(window);
+
+
+
 
     const navItems: NavItemModel[] = [
         {
@@ -21,17 +29,19 @@ function Navbar(): ReactNode {
     ]
 
     return ( 
-        <div className={style.nav__container}>
+        <motion.div style={{color:scrollColor}} className={style.nav__container}>
+            <p className={style.brand}>Du Café et du Code</p>
             <nav>
                 {navItems.map((item,index)=>{
                     return(
                         <a key={index} href={`#${item.path}`}>{item.label}</a>
                     )
                 })}
+                <button className="btn-primary">Prendre rendez-vous</button>
             </nav>
-            <p className={style.brand}> <img src="/images/coffe_icon.webp" alt="" /> Du Café et du Code</p>
-            <button className="btn-primary">Prendre RDV</button>
-        </div>
+            
+            
+        </motion.div>
      );
 }
 
