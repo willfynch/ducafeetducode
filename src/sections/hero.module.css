@@ -1,0 +1,90 @@
+.hero {
+  background-image: url("../../public/images/hero_2.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  block-size: 120vh;
+  place-content: center;
+  text-align: center;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--white-primary);
+}
+
+.title {
+  display: inline-block;
+  margin-top: 0;
+}
+
+.letter {
+  /* position: relative; */
+  display: inline-block;
+  transition-duration: 0.5s;
+}
+
+.siteWeb:hover .letter[data-index="1"] {
+  transform: translate(50%, -50%) rotate(10deg);
+}
+.siteWeb:hover .letter[data-index="2"] {
+  transform: translate(30%, 30%) rotate(4deg);
+}
+.siteWeb:hover .letter[data-index="3"] {
+  transform: translate(60%, -20%) rotate(13deg);
+}
+.siteWeb:hover .letter[data-index="4"] {
+  transform: translate(50%, -50%) rotate(123deg);
+}
+.siteWeb:hover .letter[data-index="5"] {
+  transform: translate(50%, -50%) rotate(87deg);
+}
+.siteWeb:hover .letter[data-index="6"] {
+  transform: translate(30%, -50%) rotate(34deg);
+}
+.siteWeb:hover .letter[data-index="7"] {
+  transform: translate(50%, 40%) rotate(32deg);
+}
+.siteWeb:hover .letter[data-index="8"] {
+  transform: translate(80%, 10%) rotate(4deg);
+}
+
+.signature_div {
+  display: flex;
+  justify-content: center;
+}
+.signature {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  position: relative;
+}
+
+.signature_svg {
+  width: 100%;
+  position: absolute;
+  top: 110%;
+  stroke-dasharray: 266;
+  stroke-dashoffset: 266;
+  transform: translateY(-100px);
+  z-index: 1;
+  animation: 0.5s sign linear forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+
+@keyframes sign {
+  0% {
+    stroke-dashoffset: 266;
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+.hero_cta {
+  z-index: 3;
+}

@@ -1,17 +1,13 @@
 'use client'
-import { ReactNode, useEffect, useRef, useState } from "react";
+import { ReactNode, useState } from "react";
 import style from "./navbar.module.css"
 import { NavItemModel } from "@/models/navitem.model";
-import { motion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 
 
 function Navbar(): ReactNode {
-    const [scrollColor, setScrollColor] = useState('var(--white-primary)');
+    const [scrollColor] = useState('var(--white-primary)');
     
-    const ref = useRef<Window>(window);
-
-
-
 
     const navItems: NavItemModel[] = [
         {

@@ -32,6 +32,16 @@ h2{
 }
 @media (min-width:800px) {
   h1 {
+    font-size: calc(48px + 0.690625vw);
+    font-family: "Playfair Display", serif;
+  }
+  h2{
+    font-size: calc(40px + 0.690625vw);
+    font-family: "Playfair Display", serif;
+  }
+}
+@media (min-width:1500px) {
+  h1 {
     font-size: calc(72px + 0.690625vw);
     font-family: "Playfair Display", serif;
   }
@@ -63,7 +73,7 @@ p,a,button {
   background-color: var(--yellow-primary);
   color: var(--blue-primary);
   cursor: pointer;
-  padding: 16px 20px;
+  padding: 12px 16px;
   border: none;
   border-radius: 10px;
   transition: all ease-out .3s;
@@ -74,7 +84,7 @@ p,a,button {
   text-decoration: none;
 }
 .btn-primary:hover {
-  transform: scale(110%);
+  transform: scale(105%);
 }
 .btn-rounded-secondary {
   border-color: var(--yellow-primary);
