@@ -1,0 +1,31 @@
+.text_wrapper {
+  padding: 5% 20px;
+}
+.promise_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  width: 80%;
+}
+@media (min-width: 400px) {
+  .container {
+    flex-direction: row;
+  }
+}
+@media (min-width: 900px) {
+  .text_wrapper {
+    padding: 5% 20%;
+  }
+  .container {
+    flex-wrap: nowrap;
+  }
+}

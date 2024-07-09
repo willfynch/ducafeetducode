@@ -11,7 +11,7 @@ function HeroSection(): ReactNode {
       </p>
 
       {/* TITRE */}
-      <h1 className={style.title + " unselectable"}>
+      <h1 id="hero_title" className={style.title + " unselectable"}>
         Plus qu’un{" "}
         <span className={style.siteWeb + " text-yellow "}>
           <div className={style.letter} data-index={1}>
@@ -66,6 +66,9 @@ function HeroSection(): ReactNode {
           .
         </div>
       </h1>
+
+      {/* SUBTITLE */}
+      <p className={style.subtitle}>Sites web sur mesure pour petites structures.</p>
 
       {/* CTA */}
       <button className={style.hero_cta + " btn-primary "}>

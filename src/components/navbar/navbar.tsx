@@ -1,44 +1,59 @@
-'use client'
-import { ReactNode, useState } from "react";
-import style from "./navbar.module.css"
+"use client";
+import { ReactNode, useEffect, useState } from "react";
+import style from "./navbar.module.css";
 import { NavItemModel } from "@/models/navitem.model";
-import { motion } from "framer-motion";
-
+import Link from "next/link";
+import { GiCoffeeBeans } from "react-icons/gi";
+import { useMotionValueEvent, useScroll } from "framer-motion";
 
 function Navbar(): ReactNode {
-    const [scrollColor] = useState('var(--white-primary)');
-    
+  const { scrollYProgress } = useScroll();
+  const [hookedYPostion, setHookedYPosition] = useState(0);
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    setHookedYPosition(latest * 100);
+  });
 
-    const navItems: NavItemModel[] = [
-        {
-            path: 'methode',
-            label: 'Méthode'
-        },
-        {
-            path: 'tarifs',
-            label: 'Tarifs'
-        },
-        {
-            path: 'FAQ',
-            label: 'F.A.Q'
-        },
-    ]
+  const navItems: NavItemModel[] = [
+    {
+      path: "methode",
+      label: "Méthode",
+    },
+    {
+      path: "tarifs",
+      label: "Tarifs",
+    },
+    {
+      path: "FAQ",
+      label: "F.A.Q",
+    },
+  ];
 
-    return ( 
-        <motion.div style={{color:scrollColor}} className={style.nav__container}>
-            <p className={style.brand}>Du Café et du Code</p>
-            <nav>
-                {navItems.map((item,index)=>{
-                    return(
-                        <a key={index} href={`#${item.path}`}>{item.label}</a>
-                    )
-                })}
-                <button className="btn-primary">Prendre rendez-vous</button>
-            </nav>
-            
-            
-        </motion.div>
-     );
+  return (
+    <div className={style.external_container}>
+      <div
+        className={
+          style.nav_container +
+          " " +
+          (hookedYPostion > 0.2 ? style.nav_container_scrolled : "")
+        }
+      >
+        <Link className={style.brand} href={"/"}>
+          <GiCoffeeBeans /> 
+          <span className={style.brand_name}>Du Café et du Code</span>
+        </Link>
+        <nav>
+          {navItems.map((item, index) => {
+            return (
+              <Link className={style.nav_link} key={index} href={`#${item.path}`}>
+                {item.label}
+              </Link>
+            );
+          })}
+          <button className="btn-primary">Prendre rendez-vous</button>
+        </nav>
+      </div>
+    </div>
+  );
 }
 
 export default Navbar;

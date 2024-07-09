@@ -1,0 +1,23 @@
+.faq_btn {
+    background-color: var(--yellow-primary);
+    color: var(--blue-primary);
+    cursor: pointer;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 10px;
+    transition: all ease-out .3s;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    text-decoration: none;
+    width: 90%;
+  }
+
+  @media (min-width: 900px) {
+    .faq_btn {
+        width: 60%;
+      }
+  }

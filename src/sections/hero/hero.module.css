@@ -1,9 +1,9 @@
 .hero {
-  background-image: url("../../public/images/hero_2.webp");
+  background-image: url("../../../public/images/hero_2.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  block-size: 120vh;
+  block-size: 100vh;
   place-content: center;
   text-align: center;
   background-attachment: fixed;
@@ -17,6 +17,10 @@
 .title {
   display: inline-block;
   margin-top: 0;
+}
+
+.subtitle {
+  margin-top: -1%;
 }
 
 .letter {
