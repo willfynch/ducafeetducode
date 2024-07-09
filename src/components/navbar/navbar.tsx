@@ -1,5 +1,5 @@
 "use client";
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useState } from "react";
 import style from "./navbar.module.css";
 import { NavItemModel } from "@/models/navitem.model";
 import Link from "next/link";

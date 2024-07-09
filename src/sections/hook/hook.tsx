@@ -1,8 +1,9 @@
 import PromiseCard from "@/components/promise-card/promise-card";
 import style from "./hook.module.css";
 import { PromiseModel } from "@/models/promise.model";
+import { ReactNode } from "react";
 
-function HookSection() {
+function HookSection() : ReactNode {
   const promiseCardsData: PromiseModel[] = [
     {
       image: "/images/contact.webp",
@@ -46,7 +47,7 @@ function HookSection() {
         <h2>Et la plupart sont des usines à gaz</h2>
 
         <p>
-          Des WordPress plein de plugins (qu'il faut mettre à jour !) pour de
+          Des WordPress plein de plugins (qu&apos;il faut mettre à jour !) pour de
           simples sites vitrine,
           <br />
           <br />
@@ -65,9 +66,10 @@ function HookSection() {
       </div>
       <div className={style.promise_wrapper}>
         <div className={style.container}>
-          {promiseCardsData.map((promiseData) => {
+          {promiseCardsData.map((promiseData,index) => {
             return (
               <PromiseCard
+                key={index}
                 image={promiseData.image}
                 alt={promiseData.alt}
                 title={promiseData.title}
