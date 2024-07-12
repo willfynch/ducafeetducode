@@ -63,7 +63,9 @@ function HookSection() : ReactNode {
         </p>
 
         <h2>Optez pour un site web à votre mesure</h2>
+        <p>En se concentrant sur l&apos;essentiel : votre business, vos besoins, vos capacités financières.</p>
       </div>
+      
       <div className={style.promise_wrapper}>
         <div className={style.container}>
           {promiseCardsData.map((promiseData,index) => {

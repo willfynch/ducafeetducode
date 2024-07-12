@@ -22,10 +22,9 @@
 @media (min-width: 900px) {
   .promise__container {
     height: 390px;
-    max-height: 390px;
-    
   }
 }
+
 
 .promise__desc__container h4 {
   text-transform: uppercase;

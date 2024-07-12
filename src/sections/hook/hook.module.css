@@ -14,7 +14,7 @@
   align-items: center;
   gap: 8px;
   flex-wrap: wrap;
-  width: 80%;
+  max-width: 1200px;
 }
 @media (min-width: 400px) {
   .container {
@@ -23,7 +23,7 @@
 }
 @media (min-width: 900px) {
   .text_wrapper {
-    padding: 5% 20%;
+    padding: 3% 20%;
   }
   .container {
     flex-wrap: nowrap;
