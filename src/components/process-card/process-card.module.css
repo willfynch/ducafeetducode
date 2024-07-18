@@ -1,0 +1,26 @@
+.process_card_container {
+    padding: 20px;
+    background-color: var(--white-primary);
+    border: solid 1px var(--black-primary);
+    border-radius: 10px;
+
+}
+
+.process_card_picture {
+    aspect-ratio: 1/0.5;
+    
+    position: relative;
+}
+
+.process_card_picture > * {
+    border-radius: 10px;
+}
+
+.process_card_number {
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.process_card_title {
+    font-family: "Playfair Display", serif;
+}
