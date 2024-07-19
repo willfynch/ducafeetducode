@@ -25,7 +25,8 @@
   }
   @media (min-width: 900px) {
     .cards_container {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+      place-items: center;
     }
   }
 

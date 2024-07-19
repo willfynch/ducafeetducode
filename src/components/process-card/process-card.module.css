@@ -3,12 +3,23 @@
     background-color: var(--white-primary);
     border: solid 1px var(--black-primary);
     border-radius: 10px;
+    opacity: .5;
 
+    transition: all ease-out .3s;
+    user-select: none;
+}
+
+.into_view {
+    opacity: 1;
+    user-select:auto;
+}
+
+.process_card_step_number {
+    display: none;
 }
 
 .process_card_picture {
     aspect-ratio: 1/0.5;
-    
     position: relative;
 }
 
@@ -16,11 +27,31 @@
     border-radius: 10px;
 }
 
-.process_card_number {
+.process_card_step_name {
     text-transform: uppercase;
     font-weight: 400;
 }
 
 .process_card_title {
     font-family: "Playfair Display", serif;
+}
+/* BIG SCREENS */
+
+@media (min-width:900px){
+    .process_card_container {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(1,1fr);
+        gap: 2%;
+        width: 80%;
+        min-height: 300px;
+    }
+
+    .process_card_picture {
+        aspect-ratio: none;
+        height: 100%;
+        width: 100%;
+    }
+
+
 }

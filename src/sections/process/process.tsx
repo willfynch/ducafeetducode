@@ -7,7 +7,7 @@ function ProcessSection(): ReactNode {
   const PROCESS_STEPS: ProcessCardModel[] = [
     {
       image: "/images/contact.webp",
-      number: "étape 1",
+      number: 1,
       title: "Réservez votre appel découverte gratuit",
       description: "Prenons le temps de comprendre votre situation.",
       call_to_action: {
@@ -17,31 +17,31 @@ function ProcessSection(): ReactNode {
     },
     {
       image: "/images/contact.webp",
-      number: "étape 2",
+      number: 2,
       title: "Parlons de votre contenu",
       description: "En fonction de votre situation, nous travaillerons le contenu de votre site web pour qu’il parle à votre cible. ",
     },
     {
       image: "/images/contact.webp",
-      number: "étape 3",
+      number: 3,
       title: "Maquettage sous Figma",
       description: "En temps réel, suivez l’évolution du maquettage. Votre avis compte à tout moment du processus.",
     },
     {
       image: "/images/contact.webp",
-      number: "étape 4",
+      number: 4,
       title: "Écriture du code avec Astro",
       description: "Dès qu’une page ou section est validée, je la code avec un outil qui décuple les performances et rend l’expérience d’utilisation fluide.",
     },
     {
       image: "/images/contact.webp",
-      number: "étape 5",
+      number: 5,
       title: "Livraison en continu de la version de démonstration",
       description: "Vous pouvez suivre en temps réel le développement du site web grâce à un lien non répertorié sur Google. Vous pourrez ainsi tester vous-même le site web en temps réel.",
     },
     {
       image: "/images/contact.webp",
-      number: "étape 6",
+      number: 6,
       title: "Livraison finale",
       description: "Votre site est en ligne. Je m’assure que tout est bien répertorié sur Google et je reste à votre disposition comme indiqué dans la partie tarifs.",
       call_to_action: {
