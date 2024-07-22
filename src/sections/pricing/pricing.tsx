@@ -2,8 +2,9 @@ import PricingCard, {
   PricingModel,
 } from "@/components/pricing-card/pricing-card";
 import style from "./pricing.module.css";
+import { ReactNode } from "react";
 
-function PricingSection() {
+function PricingSection()  : ReactNode {
   const OFFERS: PricingModel[] = [
     {
       title: "Le site vitrine 🏪",

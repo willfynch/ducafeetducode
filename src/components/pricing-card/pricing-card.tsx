@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import style from "./pricing-card.module.css";
 import { GiCoffeeBeans } from "react-icons/gi";
 
@@ -9,7 +10,7 @@ export interface PricingModel {
   cta_text: string;
 }
 
-function PricingCard(props: PricingModel) {
+function PricingCard(props: PricingModel) : ReactNode {
   return (
     <div className={style.pricing_card_container}>
       <p>{props.title.toUpperCase()}</p>
