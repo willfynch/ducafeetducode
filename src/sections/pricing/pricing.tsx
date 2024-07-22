@@ -88,6 +88,17 @@ function PricingSection()  : ReactNode {
             );
           })}
         </div>
+
+        <div className={style.pricing_perso}>
+        <div className="btn-rounded-tertiary">Offre sur mesure</div>
+        <h2>Un besoin particulier ? </h2>
+        <p>Prenons contact et discutons ensemble de votre demande.</p>
+        <button className="btn btn-primary">Demander un devis</button>
+      </div>
+      </div>
+
+      <div className={style.perso_wrapper}>
+
       </div>
     </section>
   );

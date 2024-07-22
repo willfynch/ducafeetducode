@@ -83,10 +83,6 @@ small {
   font-family: "Josefin Sans", sans-serif;
 
 }
-section {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
 
 /* BUTTONS */
 .btn-primary {
@@ -113,6 +109,20 @@ section {
   border-style: solid;
   padding: 12px 16px;
   color: var(--yellow-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: fit-content;
+  margin: 0;
+}
+.btn-rounded-tertiary {
+  border-color: var(--black-primary);
+  border-width: 1px;
+  border-radius: 50px;
+  border-style: solid;
+  padding: 12px 16px;
+  color: var(--black-primary);
   display: flex;
   justify-content: center;
   align-items: center;
