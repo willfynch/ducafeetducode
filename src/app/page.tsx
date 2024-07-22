@@ -6,6 +6,7 @@ import HookSection from "@/sections/hook/hook";
 import FAQSection from "@/sections/faq/faq";
 import ProcessSection from "@/sections/process/process";
 import PricingSection from "@/sections/pricing/pricing";
+import PortfolioSection from "@/sections/portfolio/portfolio";
 
 export default function Home(): ReactNode {
 
@@ -15,8 +16,8 @@ export default function Home(): ReactNode {
       <HookSection></HookSection>
       <ProcessSection></ProcessSection>
       <PricingSection></PricingSection>
+      <PortfolioSection></PortfolioSection>
       <FAQSection></FAQSection>
-
     </main>
   );
 }

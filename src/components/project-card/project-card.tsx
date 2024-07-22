@@ -13,6 +13,7 @@ function ProjectCard(props: ProjectModel): ReactNode {
       />
       <div className={style.project_card__body}>
         <h4>{props.title}</h4>
+        <p>{props.description}</p>
         <a draggable={false} role="button" target="_blank" href={props.url.toString()} className="btn-primary">Visiter &nbsp;<TbExternalLink /></a>
       </div>
     </div>
