@@ -118,11 +118,13 @@ small {
 }
 .btn-rounded-tertiary {
   border-color: var(--black-primary);
+  font-family: "Josefin Sans", sans-serif;
   border-width: 1px;
   border-radius: 50px;
   border-style: solid;
   padding: 12px 16px;
-  color: var(--black-primary);
+  background-color: var(--black-primary);
+  color: var(--white-primary);
   display: flex;
   justify-content: center;
   align-items: center;

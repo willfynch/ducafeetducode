@@ -3,8 +3,9 @@ import PricingCard, {
 } from "@/components/pricing-card/pricing-card";
 import style from "./pricing.module.css";
 import { ReactNode } from "react";
+import { GiCoffeeBeans } from "react-icons/gi";
 
-function PricingSection()  : ReactNode {
+function PricingSection(): ReactNode {
   const OFFERS: PricingModel[] = [
     {
       title: "Le site vitrine 🏪",
@@ -88,18 +89,28 @@ function PricingSection()  : ReactNode {
             );
           })}
         </div>
-
+        <div className={style.pricing_maintenance}>
+          <p>{"Forfait maintenance".toUpperCase()} ⚙️</p>
+          <h2 style={{margin:'0'}}>20€/mois</h2>
+          <p>Une fois l&apos;abonnement terminé, vous pouvez poursuivre sur le forfait maintenance.
+          <ul className={style.description_maintenance}>
+            <li><GiCoffeeBeans/> Modifications illimitées</li>
+            <li><GiCoffeeBeans/> Conseil et accompagnement</li>
+            <li><GiCoffeeBeans/> Mises à jour</li>
+          </ul>
+          </p>
+        </div>
         <div className={style.pricing_perso}>
-        <div className="btn-rounded-tertiary">Offre sur mesure</div>
-        <h2>Un besoin particulier ? </h2>
-        <p>Prenons contact et discutons ensemble de votre demande.</p>
-        <button className="btn btn-primary">Demander un devis</button>
-      </div>
-      </div>
+          <div className="btn-rounded-tertiary">Offre sur mesure</div>
+          <h2>Un besoin particulier ? </h2>
+          <p>Prenons contact et discutons ensemble de votre demande.</p>
+          <button className="btn btn-primary">Demander un devis</button>
+        </div>
 
-      <div className={style.perso_wrapper}>
 
       </div>
+
+      <div className={style.perso_wrapper}></div>
     </section>
   );
 }

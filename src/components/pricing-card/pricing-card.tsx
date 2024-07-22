@@ -17,7 +17,7 @@ function PricingCard(props: PricingModel) : ReactNode {
 
       <div className={style.price}>
         <span>
-          <h1>{props.price}€</h1>/mois
+          <h1>{props.price}€</h1><span style={{fontFamily:"Josefin Sans"}}>/mois</span>
         </span>
         <p>Engagement sur 12 mois.</p>
       </div>
