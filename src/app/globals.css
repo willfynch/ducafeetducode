@@ -79,6 +79,14 @@ p,a,button {
   font-family: "Josefin Sans", sans-serif;
   line-height: 1.5;
 }
+small {
+  font-family: "Josefin Sans", sans-serif;
+
+}
+section {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 
 /* BUTTONS */
 .btn-primary {
