@@ -1,38 +1,42 @@
 import Slider from "@/components/slider/slider";
 import style from "./portfolio.module.css";
-import ProjectCard from "@/components/project-card/project-card";
 import { ReactNode } from "react";
+import { ProjectModel } from "@/models/project.model";
 
-function PortfolioSection() : ReactNode {
+function PortfolioSection(): ReactNode {
+  const PROJECTS: ProjectModel[] = [
+    {
+      image: "images/contact.webp",
+      alt: "",
+      title: "Miora Sophro",
+      url: new URL("https://miorasophrologie.fr"),
+      description: "Sophrologue indépendante basée à Thiais",
+    },
+    {
+      image: "images/hero_2.webp",
+      alt: "",
+      title: "My Project",
+      url: new URL('https://miorasophrologie.fr'),
+      description: "Un projet de test"
+    }
+  ];
+
   return (
     <section className={style.section}>
       <div className={style.text_wrapper}>
         <h2>Nos dernières réalisations</h2>
       </div>
 
-      <Slider>
-        <ProjectCard
-          image={"images/contact.webp"}
-          alt={""}
-          title={"Mon projet"}
-          url={new URL("https://test.fr")}
-          description={"blablablablablablal"}
-        />
-        <ProjectCard
-          image={"images/contact.webp"}
-          alt={""}
-          title={"Mon projet"}
-          url={new URL("https://test.fr")}
-          description={"blablablablablablal"}
-        />
-        <ProjectCard
-          image={"images/contact.webp"}
-          alt={""}
-          title={"Mon projet"}
-          url={new URL("https://test.fr")}
-          description={"blablablablablablal"}
-        />
-      </Slider>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Slider projects={PROJECTS}></Slider>
+      </div>
     </section>
   );
 }
