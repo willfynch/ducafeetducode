@@ -9,7 +9,7 @@ function PricingSection(): ReactNode {
   const OFFERS: PricingModel[] = [
     {
       title: "Le site vitrine 🏪",
-      price: 100,
+      price: 150,
       description_items: [
         "Met en valeur votre activité",
         "Donne des arguments de vente",
@@ -33,16 +33,17 @@ function PricingSection(): ReactNode {
     },
     {
       title: "Le site éditorial ✒️",
-      price: 150,
+      price: 200,
       description_items: [
         "Met en valeur votre activité",
         "Donne des arguments de vente",
         "Délivre une information concrète et utile",
-        "De préférence sur une seule page",
-        "Optimisé pour la navigation sur mobile",
+        "De préférence sur plusieurs pages",
+        "Crée une relation avec votre audience",
       ],
       offer_items: [
         "Site web 5 pages maximum",
+        "Contenu modifiable par vous",
         "Moodboard",
         "Accompagnement",
         "Maquettage UX/UI sur Figma",
@@ -61,8 +62,8 @@ function PricingSection(): ReactNode {
     <section className={style.section}>
       <div className={style.text_wrapper}>
         <h2>Une tarification adaptée </h2>
-        <p className={style.pricing_explaination}>
-          Un système d’abonnement avec engagement sur 12 mois.
+        <div className={style.pricing_explaination}>
+          <p>Un système d’abonnement avec engagement sur 12 mois.</p>
           <ul className={style.subscription_pros_list}>
             <li>✅ Vous rentrez facilement dans vos frais</li>
             <li>✅ Le prix total reste conforme au marché</li>
@@ -71,7 +72,7 @@ function PricingSection(): ReactNode {
               “maintenance”
             </li>
           </ul>
-        </p>
+        </div>
       </div>
 
       <div className={style.pricing_wrapper}>
@@ -92,13 +93,13 @@ function PricingSection(): ReactNode {
         <div className={style.pricing_maintenance}>
           <p>{"Forfait maintenance".toUpperCase()} ⚙️</p>
           <h2 style={{margin:'0'}}>20€/mois</h2>
-          <p>Une fois l&apos;abonnement terminé, vous pouvez poursuivre sur le forfait maintenance.
+          <p>Une fois l&apos;abonnement terminé, vous pouvez poursuivre sur le forfait maintenance.</p>
           <ul className={style.description_maintenance}>
             <li><GiCoffeeBeans/> Modifications illimitées</li>
             <li><GiCoffeeBeans/> Conseil et accompagnement</li>
             <li><GiCoffeeBeans/> Mises à jour</li>
           </ul>
-          </p>
+          
         </div>
         <div className={style.pricing_perso}>
           <div className="btn-rounded-tertiary">Offre sur mesure</div>
