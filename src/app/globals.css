@@ -74,10 +74,15 @@ h5 {
   font-size: calc(14px + 0.690625vw);
   font-family: "Josefin Sans", sans-serif;
 }
-p,a,button {
+p,a,button, li {
   font-size: calc(14px + 0.290625vw);
   font-family: "Josefin Sans", sans-serif;
   line-height: 1.5;
+}
+ul, li {
+  list-style-position:inside;
+  margin:0;
+  padding:0;
 }
 small {
   font-family: "Josefin Sans", sans-serif;
