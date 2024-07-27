@@ -29,7 +29,7 @@ function Navbar(): ReactNode {
   ];
 
   return (
-    <div className={style.external_container}>
+    <header className={style.external_container}>
       <div
         className={
           style.nav_container +
@@ -52,7 +52,7 @@ function Navbar(): ReactNode {
           <button className="btn-primary">Prendre rendez-vous</button>
         </nav>
       </div>
-    </div>
+    </header>
   );
 }
 
