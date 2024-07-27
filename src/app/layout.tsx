@@ -1,6 +1,7 @@
 import Navbar from "@/components/navbar/navbar";
 import "./globals.css";
 import { Metadata, Viewport } from "next";
+import Footer from "@/sections/footer/footer";
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale:1
@@ -27,19 +28,19 @@ export const metadata: Metadata = {
     "E-commerce",
     "TPE",
     "Entrepreneurs",
-    "Sites jamstack",
-    "Sites sans serveur",
-    "Site sans wordpress",
     "Conception de site web",
+    "TPE",
+    "PME",
+    "Professions libérales"
   ],
   metadataBase: new URL("https://ducafeetducode.com"),
   openGraph: {
     type: "website",
     url: "https://ducafeetducode.com",
     title:
-      "Du Café et du Code. Studio de création de sites internet sur mesure.",
+      "Du Café et du Code. Studio de création de sites internet sur mesure pour TPE, PME et professions libérales.",
     description:
-      "Le studio Du Café et du Code réalise des sites internet sur mesure pour les indépendants de tous les horizons grâce à des outils techniques récents et une tarification adaptée.",
+      "Le studio Du Café et du Code réalise des sites internet sur mesure pour les TPE, PME et professions libérales de tous les horizons grâce à des outils techniques récents et une tarification adaptée.",
     siteName: "Du Café et du Code",
     images: [
       {
@@ -58,6 +59,7 @@ export default function RootLayout({
       <body>
         <Navbar></Navbar>
         {children}
+        <Footer/>
       </body>
     </html>
   );
