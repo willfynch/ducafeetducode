@@ -15,7 +15,7 @@ function HookSection() : ReactNode {
     {
       image: "/images/contact.webp",
       alt: "Photo de ",
-      title: "Les fonctionnalités essentielles",
+      title: "À l'essentiel",
       description:
         "Pas d'usine à gaz. Uniquement les fonctionnalités <strong>qui vous apportent de la valeur</strong> et vous aident dans votre activité.",
     },
