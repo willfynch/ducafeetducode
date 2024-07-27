@@ -1,0 +1,39 @@
+.container {
+  padding: 20px;
+  background-color: var(--white-primary);
+  border: solid 1px var(--black-primary);
+  border-radius: 10px;
+
+}
+
+.header {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+.customer_section {
+    display: flex;
+    gap: 1rem;
+}
+
+.customer_name_section p{
+ margin:0;
+}
+.customer_name_section p:nth-child(2){
+    opacity: .6;
+}
+
+.customer_image {
+    clip-path: circle(50% at 50% 50%);
+}
+
+.stars {
+    color: var(--yellow-primary)
+}
+
+.text_section i {
+    font-size: .9rem;
+    text-align: justify;
+}

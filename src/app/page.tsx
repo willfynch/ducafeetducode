@@ -7,6 +7,7 @@ import FAQSection from "@/sections/faq/faq";
 import ProcessSection from "@/sections/process/process";
 import PricingSection from "@/sections/pricing/pricing";
 import PortfolioSection from "@/sections/portfolio/portfolio";
+import ReviewsSection from "@/sections/reviews/reviews";
 
 export default function Home(): ReactNode {
 
@@ -17,6 +18,7 @@ export default function Home(): ReactNode {
       <ProcessSection></ProcessSection>
       <PricingSection></PricingSection>
       <PortfolioSection></PortfolioSection>
+      <ReviewsSection></ReviewsSection>
       <FAQSection></FAQSection>
     </main>
   );

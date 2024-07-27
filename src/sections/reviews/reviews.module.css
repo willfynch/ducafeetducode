@@ -1,0 +1,24 @@
+.section {
+  margin: 10px 10px;
+}
+.text_wrapper {
+  padding: 5% 20px;
+  text-align: center;
+}
+
+.cards_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.cards_container {
+  display: block;
+}
+@media (min-width: 900px) {
+  .cards_container {
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
