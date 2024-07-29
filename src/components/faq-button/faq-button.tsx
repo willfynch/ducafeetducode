@@ -1,5 +1,5 @@
 "use client";
-import { Fragment, ReactNode, useState } from "react";
+import { ReactNode, useState } from "react";
 import style from "./faq-button.module.css";
 export interface FAQItemProps {
   title: string;
@@ -9,23 +9,32 @@ export interface FAQItemProps {
 function FAQButton(props: FAQItemProps): ReactNode {
   const [isOpen, setOpen] = useState(false);
 
-  function handleClick() : void {
+  function handleClick(): void {
     setOpen(!isOpen);
   }
 
   return (
-    <Fragment>
-    <button aria-label={props.title} id={props.title} aria-expanded={isOpen} title={props.title} onClick={handleClick} className={style.faq_btn} >
+    <div className={style.accordion_box}>
+      <h3
+        role="button"
+        aria-label={props.title}
+        id={props.title}
+        aria-expanded={isOpen}
+        title={props.title}
+        onClick={handleClick}
+        className={style.title}
+      >
         <p>{props.title}</p>
-        <span >{isOpen ? '-' : '+'}</span>
-    </button>
-    <div data-visible={isOpen} aria-labelledby={props.title} className={style.faq_content_container} >
-        <p >
-           {props.details}
-        </p>
+      </h3>
+      <div
+        aria-hidden={!isOpen}
+        aria-labelledby={props.title}
+        className={style.accordion_content}
+      >
+        <p>{props.details}</p>
+      </div>
     </div>
-</Fragment>
-)
+  );
 }
 
 export default FAQButton;

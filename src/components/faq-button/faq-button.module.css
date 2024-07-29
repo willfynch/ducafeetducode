@@ -1,57 +1,76 @@
-.faq_btn {
-  background-color: var(--yellow-primary);
-  color: var(--blue-primary);
-  cursor: pointer;
-  padding: 10px 16px;
+.accordion_box {
+  padding: 1rem;
+  border: 1px solid;
 
-  border: none;
+  padding: 20px;
+  background-color: var(--white-primary);
+  border: solid 1px var(--black-primary);
   border-radius: 10px;
-  transition: all ease-out 0.5s;
+}
+
+.title {
+  background-color: var();
+  cursor: pointer;
+  margin:0;
+  border: none;
+  
+
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 90%;
-  height: 60px;
+  width: 100%;
+  height: 80px;
+
+  position:relative;
+}
+.title:after {
+  /* content: "\276F"; */
+  content: '☕︎';
+  text-align: center;
+  /* transform: rotate(90deg); */
+  transition: var(--transition-quick);
+  transform-origin: center;
+
+  width: 20px;
+  height: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+}
+.title[aria-expanded=true]:after {
+  transform: rotateZ(-40deg);
+}
+.title:hover{
+  opacity: .5;
 }
 
 @media (min-width: 900px) {
-  .faq_btn,
-  .faq_content_container {
-    width: 60%;
+  .title,
+  .details_box {
+    width: 100%;
   }
 }
 
-.faq_content_container {
-  transition: all ease-out 0.5s;
-  display: flex;
-  justify-content: center;
+.accordion_content {
+
+
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 500ms;
+  
 }
 
-.faq_content_container p {
+.accordion_content[aria-hidden="false"] {
+  grid-template-rows: 1fr;
+}
+.accordion_content > p {
+  overflow: hidden;
   margin: 0;
-  width: 80%;
-  text-align: justify;
-  padding: 15px;
-  border-radius: 10px;
-
-  background-color: rgb(238, 200, 0, 0.2);
 }
 
-.faq_content_container[data-visible="false"] {
-  margin-top: -1.25rem;
-  height: 0;
-  opacity: 0;
-}
-.faq_content_container[data-visible="true"] {
-  margin-top: 0;
-  height: fit-content;
-  opacity: 1;
-}
 
-.faq_content_container[data-visible="false"] p {
-  visibility: hidden;
-}
-.faq_content_container[data-visible="true"] p {
-  visibility: visible;
-}
+
+
