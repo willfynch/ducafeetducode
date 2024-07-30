@@ -59,6 +59,10 @@ function FAQSection(): ReactNode {
               />
             );
           })}
+          <div className={style.cta_last_question}>
+            <h3><p>Vous ne trouvez pas de réponse à votre question ? </p></h3>
+            <p>Vous pouvez m&apos;envoyer un email 📩 : <a href="mailto:william.finzy@protonmail.com">william.finzy@protonmail.com</a>. Je vous répondrai dans les plus brefs délais !</p>
+          </div>
         </div>
         <div className={style.cta_container}>
           <div className={style.cta}>
@@ -76,7 +80,7 @@ function FAQSection(): ReactNode {
               William, le fondateur du studio.{" "}
               <strong>30 min pour parler de votre projet</strong>.
             </p>
-            <button className={" btn-primary "}>Je réserve mon appel</button>
+            <a target="_blank" href={process.env.NEXT_PUBLIC_CALENDLY} className={" btn-primary "}>Je réserve mon appel</a>
           </div>
         </div>
       </div>

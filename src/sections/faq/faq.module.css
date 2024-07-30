@@ -58,6 +58,9 @@
   text-align: center;
   margin: 0;
 }
+.cta a {
+  text-align: center;
+}
 .profile_pic {
   clip-path: circle(50% at 50% 50%);
 }
@@ -72,4 +75,11 @@
 .accordions_container div p a:hover {
   opacity: .6;
   text-decoration: underline;
+}
+
+.cta_last_question {
+  padding: 20px;
+  background-color: var(--white-primary);
+  border: solid 1px var(--black-primary);
+  border-radius: 10px;
 }
