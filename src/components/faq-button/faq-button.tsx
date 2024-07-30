@@ -1,6 +1,7 @@
 "use client";
 import { ReactNode, useState } from "react";
 import style from "./faq-button.module.css";
+import parse from 'html-react-parser';
 export interface FAQItemProps {
   title: string;
   details: string;
@@ -31,7 +32,7 @@ function FAQButton(props: FAQItemProps): ReactNode {
         aria-labelledby={props.title}
         className={style.accordion_content}
       >
-        <p>{props.details}</p>
+        <p>{parse(props.details)}</p>
       </div>
     </div>
   );

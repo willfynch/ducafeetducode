@@ -49,18 +49,15 @@
 
 @media (min-width: 900px) {
   .title,
-  .details_box {
+  .accordion_content {
     width: 100%;
   }
 }
 
 .accordion_content {
-
-
   display: grid;
   grid-template-rows: 0fr;
   transition: grid-template-rows 500ms;
-  
 }
 
 .accordion_content[aria-hidden="false"] {
@@ -69,6 +66,7 @@
 .accordion_content > p {
   overflow: hidden;
   margin: 0;
+  opacity: .8;
 }
 
 
