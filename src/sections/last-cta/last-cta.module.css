@@ -7,7 +7,7 @@
   border-radius: 10px;
 
   /* animation: bounce 1s linear infinite; */
-  margin: 10rem;
+  margin: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,6 +20,11 @@
   background-position: left top, right bottom, left bottom, right top;
   animation: border-dance 1s infinite linear;
   
+}
+@media (min-width:900px) {
+   .wrapper {
+    margin: 10rem;
+   }
 }
 
 @keyframes border-dance {
