@@ -49,7 +49,7 @@ function Navbar(): ReactNode {
               </Link>
             );
           })}
-          <button className="btn-primary">Prendre rendez-vous</button>
+          <a href={process.env.NEXT_PUBLIC_CALENDLY} target="_blank" className="btn-primary">Prendre rendez-vous</a>
         </nav>
       </div>
     </header>

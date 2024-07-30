@@ -61,3 +61,15 @@
 .profile_pic {
   clip-path: circle(50% at 50% 50%);
 }
+
+.accordions_container div p a {
+  text-decoration: none;
+  font-weight: 700; 
+  font-size: .9rem;
+  color: var(--black-primary); 
+} 
+
+.accordions_container div p a:hover {
+  opacity: .6;
+  text-decoration: underline;
+}

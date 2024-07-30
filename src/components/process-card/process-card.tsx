@@ -1,3 +1,4 @@
+
 import { ReactNode, useRef, useState } from "react";
 import style from "./process-card.module.css";
 import Image from "next/image";
@@ -12,17 +13,9 @@ function ProcessCard(props: ProcessCardModel): ReactNode {
   });
   const [hookedYPostion, setHookedYPosition] = useState(0);
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    console.log(latest)
     setHookedYPosition(latest * 100);
   });
 
-  function handleClick(): (() => void) | void | undefined {
-    if (props.call_to_action) {
-      return props.call_to_action.action;
-    } else {
-      return;
-    }
-  }
 
   return (
     <div ref={ref} className={style.process_card_container + ' ' + (hookedYPostion < 100 ? style.into_view : ' ')}>
@@ -34,9 +27,9 @@ function ProcessCard(props: ProcessCardModel): ReactNode {
         <h3 className={style.process_card_title}>{props.title}</h3>
         <p className={style.process_card_description}>{props.description}</p>
         {props.call_to_action && (
-          <button onClick={handleClick} className="btn btn-primary">
+          <a target={props.call_to_action.isInternal ? '_self': '_blank'} href={props.call_to_action.link} className="btn btn-primary">
             {props.call_to_action.text}
-          </button>
+          </a>
         )}
       </div>
     </div>

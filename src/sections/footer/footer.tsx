@@ -19,7 +19,7 @@ function Footer(): ReactNode {
         </div>
         <nav>
             <Link href="/mentions-legals">Mentions légales</Link>
-            <a href="">Prendre rendez-vous</a>
+            <a target="_blank" href={process.env.CALENDLY}>Prendre rendez-vous</a>
         </nav>
       </div>
     </footer>

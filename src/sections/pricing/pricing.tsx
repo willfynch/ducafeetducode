@@ -59,7 +59,7 @@ function PricingSection(): ReactNode {
   ];
 
   return (
-    <section className={style.section}>
+    <section id="tarifs" className={style.section}>
       <div className={style.text_wrapper}>
         <h2>Une tarification adaptée </h2>
         <div className={style.pricing_explaination}>
@@ -90,7 +90,7 @@ function PricingSection(): ReactNode {
             );
           })}
         </div>
-        <div className={style.pricing_maintenance}>
+        <div id="maintenance" className={style.pricing_maintenance}>
           <p>{"Forfait maintenance".toUpperCase()} ⚙️</p>
           <h2 style={{margin:'0'}}>20€/mois</h2>
           <p>Une fois l&apos;abonnement terminé, vous pouvez poursuivre sur le forfait maintenance.</p>
@@ -105,7 +105,7 @@ function PricingSection(): ReactNode {
           <div className="btn-rounded-tertiary">Offre sur mesure</div>
           <h2>Un besoin particulier ? </h2>
           <p>Prenons contact et discutons ensemble de votre demande.</p>
-          <button className="btn btn-primary">Demander un devis</button>
+          <a target="_blank" href={process.env.NEXT_PUBLIC_CALENDLY} className="btn btn-primary">Demander un devis</a>
         </div>
 
 

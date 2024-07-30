@@ -8,5 +8,6 @@ export interface ProcessCardModel {
 
 type CallToActionType = {
     text: string;
-    action: ()=>void
+    link: string | undefined;
+    isInternal: boolean;
 }

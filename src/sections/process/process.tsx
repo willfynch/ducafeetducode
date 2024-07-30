@@ -12,7 +12,8 @@ function ProcessSection(): ReactNode {
       description: "Prenons le temps de comprendre votre situation.",
       call_to_action: {
         text: 'Je réserve mon rendez-vous gratuit',
-        action: ()=>console.log('Je réserve mon rendez-vous gratuit')
+        link: process.env.NEXT_PUBLIC_CALENDLY?.toString(),
+        isInternal: false
       }
     },
     {
@@ -46,13 +47,14 @@ function ProcessSection(): ReactNode {
       description: "Votre site est en ligne. Je m’assure que tout est bien répertorié sur Google et je reste à votre disposition comme indiqué dans la partie tarifs.",
       call_to_action: {
         text: 'Voir les tarifs',
-        action: ()=>console.log('Voir les tarifs')
+        link: '#tarifs',
+        isInternal: true
       }
     },
   ];
 
   return (
-    <section className={style.section}>
+    <section id="methode" className={style.section}>
       <div className={style.text_wrapper}>
         <h2>Réactivité. Flexibilité. Transparence. </h2>
         <h4>Prenez part à la création de votre site web.</h4>

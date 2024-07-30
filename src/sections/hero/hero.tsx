@@ -70,9 +70,9 @@ function HeroSection(): ReactNode {
       <p className={style.subtitle}>Sites web sur mesure pour petites structures.</p>
 
       {/* CTA */}
-      <button className={style.hero_cta + " btn-primary "}>
+      <a href={process.env.NEXT_PUBLIC_CALENDLY} target="_blank" className={style.hero_cta + " btn-primary "}>
         Prendre rendez-vous
-      </button>
+      </a>
     </section>
   );
 }

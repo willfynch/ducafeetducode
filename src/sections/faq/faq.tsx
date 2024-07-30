@@ -39,12 +39,12 @@ function FAQSection(): ReactNode {
     },
     {
       question: "Quels sont les coûts récurrents à prévoir ?",
-      answer: "Il y en a peu ! Nos choix technologiques nous permettent de s'affranchir des frais d'hébergement. Vous devrez toutefois payer votre nom de domaine (en général moins de 20€ / an). Vous pourrez aussi souscrire au <a href='#tarifs'>forfait maintenance</a> afin de bénéficier de mon accompagnement pendant longtemps pour 20€/mois."
+      answer: "Il y en a peu ! Nos choix technologiques nous permettent de s'affranchir des frais d'hébergement. Vous devrez toutefois payer votre nom de domaine (en général moins de 20€ / an). Vous pourrez aussi souscrire au <a className='' href='#maintenance'>forfait maintenance</a> afin de bénéficier de mon accompagnement pendant longtemps pour 20€/mois."
     },
   ];
 
   return (
-    <section className={style.section}>
+    <section id="FAQ" className={style.section}>
       <div className={style.text_wrapper}>
         <h2>Des questions ?</h2>
       </div>
