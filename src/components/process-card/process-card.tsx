@@ -1,4 +1,5 @@
 
+'use client'
 import { ReactNode, useRef, useState } from "react";
 import style from "./process-card.module.css";
 import Image from "next/image";
