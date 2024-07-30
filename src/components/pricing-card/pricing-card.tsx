@@ -37,7 +37,7 @@ function PricingCard(props: PricingModel) : ReactNode {
       </div>
 
       <div className={style.call_to_action}>
-        <a href={process.env.NEXT_PUBLIC_CALENDLY} className="btn btn-primary">{props.cta_text}</a>
+        <a href={process.env.NEXT_PUBLIC_CALENDLY} target="_blank" className="btn btn-primary">{props.cta_text}</a>
       </div>
     </div>
   );
