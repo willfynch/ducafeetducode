@@ -27,7 +27,7 @@ function FAQSection(): ReactNode {
     },
     {
       question: "Quels sont les délais pour la livraison du produit fini ?",
-      answer: "Tout dépend de la complexité du projet de votre réactivité. En général, entre 15 jours et 1 mois."
+      answer: "Tout dépend de la complexité du projet, de notre communication et du nombre de révisions à faire. En général, entre 15 jours et 1 mois."
     },
     {
       question: "Est-ce que je pourrai modifier mon site moi-même ?",
