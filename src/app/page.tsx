@@ -8,6 +8,7 @@ import ProcessSection from "@/sections/process/process";
 import PricingSection from "@/sections/pricing/pricing";
 import PortfolioSection from "@/sections/portfolio/portfolio";
 import ReviewsSection from "@/sections/reviews/reviews";
+import LastCtaSection from "@/sections/last-cta/last-cta";
 
 export default function Home(): ReactNode {
 
@@ -20,6 +21,7 @@ export default function Home(): ReactNode {
       <PortfolioSection></PortfolioSection>
       <ReviewsSection></ReviewsSection>
       <FAQSection></FAQSection>
+      <LastCtaSection></LastCtaSection>
     </main>
   );
 }
