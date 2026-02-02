@@ -3,10 +3,14 @@ import "./globals.css";
 import { Metadata, Viewport } from "next";
 import Footer from "@/sections/footer/footer";
 export const viewport: Viewport = {
-  width: 'device-width',
-  initialScale:1
-}
+  width: "device-width",
+  initialScale: 1,
+};
 export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
   title: "Du Café et du Code. Studio de création de sites internet sur mesure.",
   description:
     "Le studio Du Café et du Code réalise des sites internet sur mesure pour les indépendants de tous les horizons grâce à des outils techniques récents et une tarification adaptée.",
@@ -31,7 +35,7 @@ export const metadata: Metadata = {
     "Conception de site web",
     "TPE",
     "PME",
-    "Professions libérales"
+    "Professions libérales",
   ],
   metadataBase: new URL("https://ducafeetducode.com"),
   openGraph: {
@@ -59,7 +63,7 @@ export default function RootLayout({
       <body>
         <Navbar></Navbar>
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );

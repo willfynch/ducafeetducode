@@ -1,5 +1,5 @@
 User-Agent: *
-Allow: /
-Disallow: /admin/
+Allow: 
+Disallow: /
 
 Sitemap: https://ducafeetducode.com/sitemap.xml
